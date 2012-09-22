@@ -256,7 +256,7 @@ module.exports = function(grunt) {
       // when serving app, make sure to delete the temp/ dir from w/e was
       // previously compiled here, and trigger compass / coffee mostly to make
       // sure, those files are compiled and not revved.
-      grunt.task.run('clean coffee compass open-browser');
+      grunt.task.run(grunt.config('server.initTasks') || 'clean coffee compass open-browser');
     }
 
     grunt.task.run('watch');
